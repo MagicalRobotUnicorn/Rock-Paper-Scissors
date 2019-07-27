@@ -1,0 +1,294 @@
+/* <button type="button" class="btn btn-outline-dark">Dark</button> */
+/* <link href="https://fonts.googleapis.com/css?family=Beth+Ellen|Ewert|Press+Start+2P|Rock+Salt|Special+Elite&display=swap" rel="stylesheet"> */
+
+/* font-family: 'Ewert', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Rock Salt', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Beth Ellen', cursive; */
+
+/* <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> */
+
+/* <p><img src="img_lights.jpg" class="w3-round-xxlarge" alt="Norway" style="width:30%"> */
+
+/* <link href="https://fonts.googleapis.com/css?family=Beth+Ellen|Ewert|Press+Start+2P|Rock+Salt|Sancreek|Special+Elite&display=swap" rel="stylesheet">
+
+font-family: 'Ewert', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Rock Salt', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Beth Ellen', cursive;
+font-family: 'Sancreek', cursive; */
+
+/* <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<p>w3-round-xlarge:</p>
+  <img src="img_lights.jpg" class="w3-round-xlarge" alt="Norway" style="width:30%"> */
+
+  /* How to Create a Flip Card
+
+  <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>John Doe</h1> s
+      <p>Architect & Engineer</p> 
+      <p>We love that guy</p>
+    </div>
+  </div>
+</div>
+
+The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect
+
+*/
+
+/* ToDo:
+* Format the card shape
+* Format the image shape and dimentions
+* Add a reset button
+
+Afterwards:
+* Link timing event to the button action */
+
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 500px;
+  border: 1px solid #f1f1f1;
+  border-radius: 25px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  /* margin-left: auto;
+  margin-right: auto; */
+ }
+
+/* This container is needed to position the front and back side */
+ .flip-card-inner {
+  border-radius: 25px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+/* ORIGINAL HOVER CODE */
+/* .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+} */
+
+.flip-card .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  /* background-color: #bbb; */
+  color: black;
+  margin: auto;
+}
+
+/* Style the back side */
+.flip-card-back {
+  /* background-color: black; */
+  color: white;
+  font-family: 'Special Elite', cursive;
+  transform: rotateY(180deg);
+}
+
+/* We are adding a subclass to the existing javascript class, which is being triggered on an event.
+
+There are two ways to do this, Vanilla JS and JQuery, we will be using JS.
+
+There is a built in type on every element in JS, called classList, which has a built in function called
+*add
+
+This is the example code from CSS Tricks, the original website is at: https://css-tricks.com/controlling-css-animations-transitions-javascript/ */
+
+/* var boxOne = document.getElementsByClassName('box')[0],
+    $boxTwo = $('.box:eq(1)');
+
+document.getElementsByClassName('toggleButton')[0].onclick = function() {
+  if(this.innerHTML === 'Play') 
+  { 
+    this.innerHTML = 'Pause';
+    boxOne.classList.add('horizTranslate');
+  } else {
+    this.innerHTML = 'Play';
+    var computedStyle = window.getComputedStyle(boxOne),
+        marginLeft = computedStyle.getPropertyValue('margin-left');
+    boxOne.style.marginLeft = marginLeft;
+    boxOne.classList.remove('horizTranslate');    
+  }  
+} */
+
+/* Here are the steps for the transition:
+
+1. The game begins at the card back.
+2. When the event is triggered from the button, we use a timer to transition one card, and and then another a fraction of a second later...
+
+* The style for the card will be an xl rounded image with an identically rounded white back, with a 5px border
+
+3. After the two animations are triggered, the score will be counted as a win or a loss, with an animation triggered for that process as well.
+
+4. The wins/losses will be accompanied by a reset button, which will have a forced reload of the page. */
+
+/* #all-content {
+  display: flex;
+  flex-direction: column;  
+}
+
+#left-computer {
+  float: left;
+}
+
+#right-user {
+  float: right;
+} */
+
+body {
+  background-color: black;
+  color: white;
+}
+
+#title {
+  font-family: 'Sancreek', cursive;
+  /* font-family: 'Ewert', cursive; */
+
+  font-size: 80px;
+}
+
+#buttons {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#subheading {
+  font-family: 'Special Elite', cursive;
+}
+
+#rock {
+  font-family: 'Special Elite', cursive;
+  font-size: 40px;
+}
+
+#paper {
+  font-family: 'Special Elite', cursive;
+  font-size: 40px;
+}
+
+#scissors {
+  font-family: 'Special Elite', cursive;
+  font-size: 40px;
+}
+
+#display-wins {
+  font-family: 'Special Elite', cursive;
+
+}
+
+#display-losses {
+  font-family: 'Special Elite', cursive;
+
+}
+
+#display-ties {
+  font-family: 'Special Elite', cursive;
+}
+
+#results-row {
+  /* margin-left: auto;
+  margin-right: auto; */
+  align-content: center;
+  margin-top: 50px;
+}
+
+#card1 {
+  width:350px;
+  height:455px;
+  border-radius: 25px;
+  margin: auto;
+  /* margin-left: 20px;
+  margin-top: 25px; */
+  margin-top: 20px;
+  align-content: center;
+}
+
+#card2 {
+  width:350px;
+  height:450px;
+  border-radius: 25px;
+  /* margin-left: 20px;
+  margin-top: 25px; */
+  margin-top: 20px;
+  align-content: center;
+}
+
+#computer-picture {
+  width: 250px;
+  height: auto;
+}
+
+#user-picture {
+  width: 250px;
+  height: auto;
+}
+
+/* #card-row {
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.card-title {
+  margin: 40px;
+}
+
+.card-text {
+  margin: 40px;
+}
+
+.all-content {
+  width: 960px;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#buttons {
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
+
+#winner {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-top: 20px;
+  height: 50px;
+  font-family: 'Special Elite', cursive;
+}
+
+#button-row {
+  align-content: center;
+  margin-left: 375px;
+  margin-right: auto;
+}
+
+#vs {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: 'Special Elite', cursive;
+}

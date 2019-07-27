@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Rock Paper Scissors
+  </title>
+  <script type="text/javascript" src="scripts.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css?family=Beth+Ellen|Ewert|Press+Start+2P|Rock+Salt|Sancreek|Special+Elite&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet.css">
+
+</head>
+
+<body>
+  <div id="all-content">
+    <center>
+    <h1 id="title">
+      Rock, Paper, Scissors!
+    </h1>
+    <p>
+      <h2 id="subheading">Choose your weapon and go head to head against the most powerful of AI opponents: a random
+        number generator.</h2>
+    </p>
+    <!-- <div id="left-computer">
+        Computer Choice
+        <!-- Choose your weapon! -->
+    <!-- <img id="computer-picture" src="" style="width:250px">
+        <div id="computer-text">Click Your Choice to Begin!</div>
+      </div>
+      <div id="right-user">
+        User Choice
+        <img id="user-picture" src="" style="width:250px">
+        <div id="user-text">Click Your Choice to Begin!</div>
+      </div>
+    -->
+
+    <div id="buttons">
+      <div class="row" id="button-row">
+
+        <div class="col-md-3">
+          <button onclick="findWinner(1)" class="btn btn-light btn-block" id="rock">Rock</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="findWinner(2)" class="btn btn-light btn-block" id="paper">Paper</button>
+        </div>
+        <div class="col-md-3">
+          <button onclick="findWinner(3)" class="btn btn-light btn-block" id="scissors">Scissors</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row" id="card-row">
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        <div class="flip-card">
+          <!-- removed flip card inner class -->
+          <div id="newid">
+            <div class="flip-card-front">
+              <img src="cardback.jpg" alt="cardback" class="w3-round-xl" id="card1">
+              <!-- style="width:300px;height:300px; -->
+            </div>
+            <div class="flip-card-back">
+              <h3 class="card-title">User Choice</h3>
+              <br />
+              <!-- Choose your weapon! -->
+              <img id="user-picture" src="" style="width:250px">
+              <h3>
+                <div class="card-text" id="user-text">Click Your Choice to Begin!</div>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-1" id="vs"> -->
+        <h1 id="vs">Vs.</h1>
+      <!-- </div> -->
+      <div class="col-md-4">
+        <div class="flip-card">
+          <!-- Removed flip card inner class -->
+          <div id="newid2">
+            <div class="flip-card-front">
+              <img src="cardback.jpg" alt="cardback" class="w3-round-xl" id="card2">
+            </div>
+            <div class="flip-card-back">
+              <h3 class="card-title">Computer Choice<h3>
+                  <br />
+                  <img id="computer-picture" src="" style="width:250px">
+                  <h3>
+                    <div class="card-text" id="computer-text">Click Your Choice to Begin!</div>
+                  </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2>
+      <div id="winner">
+
+      </div>
+    </h2>
+    <div class="row" id="results-row">
+        <div class="col-md-1"></div>
+      <div class="col-md-3">
+        <div id="display-wins">
+          <h2>Wins: -- </h2>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div id="display-losses">
+          <h2>Losses: -- </h2>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div id="display-ties">
+          <h2>Ties: -- </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
